@@ -25,13 +25,13 @@ RUN mkdir "$ANDROID_HOME" .android \
  && curl -o sdk.zip $SDK_URL \
  && unzip sdk.zip \
  && rm sdk.zip \
- && yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses
+ && yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses \
  && $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-27" "build-tools;27.0.2" "extras;google;google_play_services" "platform-tools"
 
 # Install Gradle
 RUN wget $GRADLE_URL -O gradle.zip \
  && unzip gradle.zip \
- && mv gradle-1.4 gradle \
+ && mv gradle-4.1 gradle \
  && rm gradle.zip \
  && mkdir .gradle
 
